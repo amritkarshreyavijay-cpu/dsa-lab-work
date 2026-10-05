@@ -102,6 +102,10 @@ Through this project, we learn:
 * Searching in a linked list
 * Practical application of data structures
 
+## Output
+<img width="1915" height="1075" alt="Screenshot 2026-10-05 191641" src="https://github.com/user-attachments/assets/95d12155-576d-4f00-a032-376a5302197b" />
+
+
 ## Conclusion
 
 The Library Management System successfully demonstrates the implementation of a Singly Linked List in C++. It provides basic operations such as insertion, deletion, searching, and displaying book records. This project helps in understanding the practical use of linked lists in real-world applications.
