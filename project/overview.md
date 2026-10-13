@@ -34,3 +34,26 @@ The program constructs an organizational hierarchy using a binary tree and displ
 
 ## Conclusion
 The project demonstrates the use of recursion to calculate binary tree height. It also helps understand how hierarchical structures can be represented and analyzed using tree data structures.
+
+## Enhanced Features
+
+- **Height Calculation:** Finds the longest path from the root to a leaf.
+- **Minimum Depth Calculation:** Finds the shortest path from the root to a leaf.
+- **Deepest-Level Node Count:** Counts the nodes present at the deepest level.
+- **Tree Validation:** Tests empty, single-node, balanced, and skewed trees.
+
+## Test Scenarios
+
+The program is tested using four different tree structures to verify the correctness of its recursive functions.
+
+## Time Complexity
+
+- Height calculation: O(n)
+- Minimum depth calculation: O(n)
+- Deepest-level node count: O(n)
+
+Here, n represents the number of nodes in the tree.
+
+## Conclusion
+
+The enhanced program calculates the height and minimum depth of a binary tree and counts the nodes at its deepest level. Testing different tree structures helps verify the correctness of the recursive implementation.
