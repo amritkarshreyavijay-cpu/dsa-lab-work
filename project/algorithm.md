@@ -1,13 +1,16 @@
-# Algorithm: Organization Hierarchy Height Calculator
+# Algorithm: Binary Tree Analyzer
 
 1. Start.
-2. Create a binary tree representing the organization hierarchy.
-3. Assign the root node as the top-level position, such as CEO.
-4. Call the recursive `height()` function with the root node.
-5. Check whether the current node is NULL.
-6. If the node is NULL, return 0.
-7. Recursively calculate the height of the left subtree.
-8. Recursively calculate the height of the right subtree.
-9. Return 1 plus the maximum of the left and right subtree heights.
-10. Display the calculated hierarchy height in levels.
-11. Stop.
+2. Construct the binary tree.
+3. Calculate the height recursively:
+   - If the root is NULL, return 0.
+   - Otherwise, return 1 plus the maximum height of the left and right subtrees.
+4. Calculate the minimum depth recursively:
+   - If the root is NULL, return 0.
+   - If the node is a leaf, return 1.
+   - If one child is NULL, follow the other child.
+   - Otherwise, return 1 plus the minimum depth of both subtrees.
+5. Count the nodes at the deepest level by using the calculated height.
+6. Display the height, minimum depth, and deepest-level node count.
+7. Repeat the calculations for empty, single-node, balanced, and skewed trees.
+8. Stop.
