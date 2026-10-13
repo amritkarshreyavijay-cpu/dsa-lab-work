@@ -1,61 +1,101 @@
 
+
 #include <iostream>
 #include <algorithm>
+#include <string>
 using namespace std;
 
 struct Node {
     string name;
     Node* left;
     Node* right;
+
+    Node(string n) {
+        name = n;
+        left = NULL;
+        right = NULL;
+    }
 };
 
-Node* createNode(string name) {
-    Node* newNode = new Node;
-    newNode->name = name;
-    newNode->left = NULL;
-    newNode->right = NULL;
-    return newNode;
-}
-
+// Calculate maximum height
 int height(Node* root) {
     if (root == NULL)
         return 0;
 
-    int leftHeight = height(root->left);
-    int rightHeight = height(root->right);
-
-    return 1 + max(leftHeight, rightHeight);
+    return 1 + max(height(root->left),
+                   height(root->right));
 }
 
-void display(Node* root, int level = 0) {
+// Calculate minimum depth from root to a leaf
+int minDepth(Node* root) {
     if (root == NULL)
-        return;
+        return 0;
 
-    for (int i = 0; i < level; i++)
-        cout << "    ";
+    if (root->left == NULL && root->right == NULL)
+        return 1;
 
-    cout << root->name << endl;
+    if (root->left == NULL)
+        return 1 + minDepth(root->right);
 
-    display(root->left, level + 1);
-    display(root->right, level + 1);
+    if (root->right == NULL)
+        return 1 + minDepth(root->left);
+
+    return 1 + min(minDepth(root->left),
+                   minDepth(root->right));
+}
+
+// Count nodes at the deepest level
+int countAtLevel(Node* root, int level) {
+    if (root == NULL)
+        return 0;
+
+    if (level == 1)
+        return 1;
+
+    return countAtLevel(root->left, level - 1)
+         + countAtLevel(root->right, level - 1);
+}
+
+int deepestNodeCount(Node* root) {
+    return countAtLevel(root, height(root));
+}
+
+// Display results
+void analyzeTree(Node* root, string testName) {
+    cout << "\nTest: " << testName << endl;
+    cout << "Height: " << height(root) << endl;
+    cout << "Minimum depth: " << minDepth(root) << endl;
+    cout << "Nodes at deepest level: "
+         << deepestNodeCount(root) << endl;
 }
 
 int main() {
-    Node* root = createNode("CEO");
+    // 1. Empty tree
+    Node* empty = NULL;
+    analyzeTree(empty, "Empty Tree");
 
-    root->left = createNode("Manager 1");
-    root->right = createNode("Manager 2");
+    // 2. Single-node tree
+    Node* single = new Node("CEO");
+    analyzeTree(single, "Single-Node Tree");
 
-    root->left->left = createNode("Team Leader 1");
-    root->left->right = createNode("Team Leader 2");
+    // 3. Balanced tree
+    Node* balanced = new Node("CEO");
+    balanced->left = new Node("Manager 1");
+    balanced->right = new Node("Manager 2");
+    balanced->left->left = new Node("Employee 1");
+    balanced->left->right = new Node("Employee 2");
+    balanced->right->left = new Node("Employee 3");
+    balanced->right->right = new Node("Employee 4");
 
-    root->left->left->left = createNode("Employee 1");
+    analyzeTree(balanced, "Balanced Tree");
 
-    cout << "Organization Hierarchy:" << endl;
-    display(root);
+    // 4. Skewed tree
+    Node* skewed = new Node("CEO");
+    skewed->left = new Node("Manager");
+    skewed->left->left = new Node("Team Leader");
+    skewed->left->left->left = new Node("Employee");
 
-    cout << "\nHeight of Organization Hierarchy: "
-         << height(root) << " levels" << endl;
+    analyzeTree(skewed, "Skewed Tree");
 
     return 0;
 }
