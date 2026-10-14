@@ -17,11 +17,7 @@ In this project, a binary tree is used to represent a simplified organization hi
 ## Practical Application
 This project demonstrates how tree height can be used to determine the number of levels in a simplified organizational hierarchy. Similar concepts are useful in decision trees, hierarchical data management, and computer science applications.
 
-## Data Structure Used
-Binary Tree
 
-## Programming Language
-C++
 
 ## Concepts Used
 - Binary Tree
