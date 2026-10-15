@@ -1,52 +1,55 @@
-# Test Cases: Binary Tree Analyzer
+## Test Cases – Binary Tree Height Calculation
 
-## Test Case 1: Empty Tree
-**Input:** No nodes
+The program is tested using four different types of binary trees to check the working of recursive functions used to calculate the maximum height, minimum depth, and number of nodes at the deepest level.
 
-Expected output:
-- Height: 0
-- Minimum depth: 0
-- Nodes at deepest level: 0
+### 1. Empty Binary Tree
 
-## Test Case 2: Single-Node Tree
-**Structure:** CEO
+An empty binary tree does not contain any nodes. This test case checks whether the program can handle an empty tree correctly. When the root is NULL, the recursive function returns zero.
 
-Expected output:
-- Height: 1
-- Minimum depth: 1
-- Nodes at deepest level: 1
+**Example:**
+A tree is created without inserting any node. The root pointer is set to NULL.
 
-## Test Case 3: Balanced Tree
+### 2. Single-Node Binary Tree
 
-```text
-          CEO
-         /   \
-   Manager1  Manager2
-     / \       / \
-    E1  E2    E3  E4
-```
+A single-node binary tree contains only the root node, without any left or right child. This test case checks whether the program correctly calculates the height and minimum depth when only one node is present.
 
-Expected output:
-- Height: 3
-- Minimum depth: 2
-- Nodes at deepest level: 4
+**Example:**
+A tree contains only one node with the value 10, which acts as the root node.
 
-## Test Case 4: Skewed Tree
+### 3. Balanced Binary Tree
+
+A balanced binary tree has left and right subtrees with approximately equal heights. This test case checks whether the program correctly calculates the height, minimum depth, and number of nodes at the deepest level when nodes are distributed across different branches.
+
+**Example:**
 
 ```text
-CEO
- |
-Manager
- |
-Team Leader
- |
-Employee
+        1
+       / \
+      2   3
+     / \ / \
+    4  5 6  7
 ```
 
-Expected output:
-- Height: 4
-- Minimum depth: 4
-- Nodes at deepest level: 1
+In this tree, both subtrees have the same height, and four nodes are present at the deepest level.
 
-## Result
-All four tree structures are tested to verify the recursive calculation of height, minimum depth, and the number of nodes at the deepest level.
+### 4. Skewed Binary Tree
+
+A skewed binary tree is a tree in which each node has only one child, forming a chain-like structure. This test case checks the recursive functions when the height of the tree is equal to the number of nodes.
+
+**Example:**
+
+   ```text
+       1
+      /
+     2
+    /
+   3
+  /
+ 4
+```
+
+In this tree, every node has only one child, forming a single path from the root to the leaf node.
+
+### Result
+
+These four test cases help verify the correctness of the Binary Tree Height Calculation program for different tree structures. They demonstrate how recursion can be used to calculate the maximum height, minimum depth, and number of nodes at the deepest level.
