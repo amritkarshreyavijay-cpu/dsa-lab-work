@@ -1,4 +1,4 @@
-# Algorithm – Book Recommendation System Using Dynamic Singly Linked List
+# Algorithm
 
 **Step 1: Start** the program and initialize the head pointer to NULL to indicate that the linked list is initially empty.
 
