@@ -1,16 +1,13 @@
-# Algorithm: Binary Tree Analyzer
+## Algorithm: Binary Tree Height Calculation
 
-1. Start.
-2. Construct the binary tree.
-3. Calculate the height recursively:
-   - If the root is NULL, return 0.
-   - Otherwise, return 1 plus the maximum height of the left and right subtrees.
-4. Calculate the minimum depth recursively:
-   - If the root is NULL, return 0.
-   - If the node is a leaf, return 1.
-   - If one child is NULL, follow the other child.
-   - Otherwise, return 1 plus the minimum depth of both subtrees.
-5. Count the nodes at the deepest level by using the calculated height.
-6. Display the height, minimum depth, and deepest-level node count.
-7. Repeat the calculations for empty, single-node, balanced, and skewed trees.
-8. Stop.
+1. **Start** the program.
+2. Define a binary tree node containing data and pointers to the left and right child nodes.
+3. Construct a binary tree by creating nodes and connecting them using left and right pointers.
+4. Define a recursive function `height(root)` to calculate the height of the tree.
+5. If the root node is `NULL`, return 0.
+6. Recursively calculate the height of the left subtree.
+7. Recursively calculate the height of the right subtree.
+8. Find the maximum height of the left and right subtrees and add 1 to include the current node.
+9. Return the calculated height.
+10. Display the height of the constructed binary tree.
+11. **Stop** the program.
