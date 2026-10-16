@@ -1,7 +1,10 @@
-<img width="1024" height="1536" alt="58eea517-0a0a-4dc0-8317-eb6aa1cd295e" src="https://github.com/user-attachments/assets/b81cbbc6-ff6e-4aa1-890c-eb91ee194d94" />
-Start([Start]) -->|User runs program| Menu[Display Menu]
+
+
+```mermaid
+flowchart TD
+    Start([Start]) -->|User runs program| Menu[Display Menu]
     Menu -->|User selects option| Choice{Choice?}
-    
+
     Choice -->|1| InsertBeg[Insert Book at Beginning]
     InsertBeg --> GetID1[Get Book ID]
     GetID1 --> GetName1[Get Book Name]
@@ -11,7 +14,7 @@ Start([Start]) -->|User runs program| Menu[Display Menu]
     SetNext1 --> UpdateHead1[Update head = new node]
     UpdateHead1 --> Success1[Display Success Message]
     Success1 --> Menu
-    
+
     Choice -->|2| InsertEnd[Insert Book at End]
     InsertEnd --> GetID2[Get Book ID]
     GetID2 --> GetName2[Get Book Name]
@@ -24,7 +27,7 @@ Start([Start]) -->|User runs program| Menu[Display Menu]
     SetHead --> Success2[Display Success Message]
     LinkNode --> Success2
     Success2 --> Menu
-    
+
     Choice -->|3| Delete[Delete Book]
     Delete --> GetDeleteID[Get Book ID to delete]
     GetDeleteID --> CheckEmpty2{Is list empty?}
@@ -40,7 +43,7 @@ Start([Start]) -->|User runs program| Menu[Display Menu]
     EmptyMsg --> Menu
     NotFoundMsg --> Menu
     DeleteSuccess --> Menu
-    
+
     Choice -->|4| Search[Search Book]
     Search --> GetSearchID[Get Book ID to search]
     GetSearchID --> SearchTraverse[Traverse linked list]
@@ -49,26 +52,27 @@ Start([Start]) -->|User runs program| Menu[Display Menu]
     SearchFound -->|No| SearchNotFound[Display Not Found]
     DisplayBook --> Menu
     SearchNotFound --> Menu
-    
+
     Choice -->|5| Display[Display All Books]
     Display --> CheckEmpty3{Is list empty?}
     CheckEmpty3 -->|Yes| NoBooks[Display No Books Message]
     CheckEmpty3 -->|No| DisplayAll[Traverse and display all books]
     NoBooks --> Menu
     DisplayAll --> Menu
-    
+
     Choice -->|6| Exit[Exit Program]
     Exit --> Cleanup[Free all allocated memory]
     Cleanup --> End([End])
-    
+
     classDef startEnd fill:#f0fdf4,stroke:#4ade80
     classDef process fill:#eef2ff,stroke:#818cf8
     classDef decision fill:#fff7ed,stroke:#fb923c
     classDef success fill:#f0fdfa,stroke:#2dd4bf
     classDef error fill:#fef2f2,stroke:#f87171
-    
+
     class Start,End startEnd
     class InsertBeg,InsertEnd,Delete,Search,Display,GetID1,GetName1,GetAuthor1,CreateNode1,SetNext1,UpdateHead1,GetID2,GetName2,GetAuthor2,CreateNode2,Traverse,LinkNode,SetHead,GetDeleteID,FindNode,DeleteHead,DeleteNode,GetSearchID,SearchTraverse,DisplayAll,Cleanup process
     class Choice,CheckEmpty,CheckEmpty2,CheckHead,FoundCheck,SearchFound,CheckEmpty3 decision
     class Success1,Success2,DeleteSuccess,DisplayBook,DisplayAll success
     class EmptyMsg,NotFoundMsg,SearchNotFound,NoBooks error
+```
