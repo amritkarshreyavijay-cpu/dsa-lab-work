@@ -1,5 +1,5 @@
 
-## Program for Calculating Depth and no. of nodes at Deepest Level of a Tree
+## Program for Calculating Depth and No. of Nodes at Deepest Level of a Tree
 #include <iostream>
 #include <algorithm>
 #include <string>
